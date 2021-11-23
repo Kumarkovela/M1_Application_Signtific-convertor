@@ -26,3 +26,9 @@ systematic way of handling conversions.
 ## How
 Trough multiplications conversion factors.a conversion factor is used to change the units of a measured quantity without
 changing its value.
+## High Level Requirements
+accuracy
+precision
+memory
+## Low Level Requirements
+mass

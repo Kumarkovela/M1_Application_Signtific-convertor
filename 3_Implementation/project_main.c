@@ -1,64 +1,66 @@
-#include <stdio.h>
-#include <string.h>
+#include <scientific_converter.h>
 
-int main( )
+int func=0;
+int a=0;
+void scientific_converter_menu(void);
+
+int main(int func, int a) 
 {
-     int u1, u2; 
-     float c; 
-     int a;
-     scanf("%d %d %d", &u1, &u2, &a); 
-     printf("%d\n",u1);
-     printf("%d\n",u2);
-     printf("%d\n",a);
-     switch (u1) 
-    { 
-        case 1:
-
-          switch (u2) 
-          {
-              case 1:
-                 printf("%d", a);
-                 break;
-              case 2:
-                 c=(float)a/10;
-                printf("%f", c);
-                break;
-              case 3:
-                 c=(float)a/1000;
-                 printf("%f", c);
-                 break;
-              case 4:
-                 c=(float)a/1000000;
-                 printf("%f", c);
-                 break;
-              default:
-                 printf("error");
-                  break;
-          }
-          break;
-     case 2:
-           switch (u2)
-           { 
-             case 1:
-                 c=(float)a*100;
-                 printf("%d", c);
-                 break;
-             case 2:
-                 c=a;
-                printf("%f", c);
-                break;
-             case 3:
-                 c=(float)a/100;
-                 printf("%f", c);
-                 break;
-             case 4:
-                 c=(float)a/100000;
-                 printf("%f", c);
-                 break;
-             default:
-                 printf("error");
-           }
-           break;
+    printf("\n=====Scientific Converter=====\n");
+    while(1)
+    {
+        scientific_converter_menu();
     }
- }
+}
 
+void scientific_converter_menu(void)
+{
+    printf("\nAvailable modes\n");
+    printf("\n1. Trigonometry\n2. Exponential\n3. Constant\n4. Exit");
+    printf("\nEnter your choice\n\n");
+    scanf("%d", &mode);
+    
+    if (4 == mode)
+    {
+        printf("\nThank you... ");
+        exit(0);
+    }
+    
+    switch (mode)
+    {
+        case 1:
+        printf("Trigonometry");
+        printf("Available Operations");
+        printf("\n1. Sine\n2. Cosine\n3. Tangent\n4. Cosecant\n5. Secant\n6. Cotangent\n");
+        scanf("%d %d", &func, &a);
+
+        int trigo_mode(int func, int a);
+        getchar();
+        break;
+
+         case 2:
+        printf("Exponential");
+        printf("Available Operations");
+        printf("\n1. Power of e\n2. Logorithm\n");
+        scanf("%d %d", &func, &a);
+
+        int expon_mode(int func, int a);
+        getchar();
+        break;
+
+       case 3:
+        printf("Constant functions");
+        printf("Available Operations");
+        printf("\n1. Physical constants\n");
+        scanf("%d", &func);
+
+        int const_mode(int func);
+        printf("\n1. Phi\n2. e\n3. Mass of electron\n");
+        getchar();
+        break;
+
+        default:
+        printf("\n\tEnter correct input");
+         break; 
+    }
+}
